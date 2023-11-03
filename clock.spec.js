@@ -50,23 +50,23 @@ describe('Clock', () => {
       expect(new Clock(-1, 15).toString()).toEqual('23:15');
     });
 
-    xtest('negative hour rolls over', () => {
+    test('negative hour rolls over', () => {
       expect(new Clock(-25, 0).toString()).toEqual('23:00');
     });
 
-    xtest('negative hour rolls over continuously', () => {
+    test('negative hour rolls over continuously', () => {
       expect(new Clock(-91, 0).toString()).toEqual('05:00');
     });
 
-    xtest('negative minutes', () => {
+    test('negative minutes', () => {
       expect(new Clock(1, -40).toString()).toEqual('00:20');
     });
 
-    xtest('negative minutes rolls over', () => {
+    test('negative minutes rolls over', () => {
       expect(new Clock(1, -160).toString()).toEqual('22:20');
     });
 
-    xtest('negative minutes rolls over continuously', () => {
+    test('negative minutes rolls over continuously', () => {
       expect(new Clock(1, -4820).toString()).toEqual('16:40');
     });
 
