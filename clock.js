@@ -11,7 +11,7 @@ export class Clock {
     let minuteString = "";
     if (this.minute < 10) {
       minuteString = `0${this.minute}`;
-    } else if (this.minute > 10 && this.minute < 60) {
+    } else if (this.minute >= 10 && this.minute < 60) {
       minuteString = `${this.minute}`;
     } else if (this.minute >= 60) {
       const rollOver = this.minute % 60;
@@ -60,7 +60,7 @@ export class Clock {
   checkNegativeMinute() {
     if (this.minute < 0) {
       const hoursToSubtract = Math.floor(this.minute / 60);
-      this.minute = 60 + (this.minute % 60);
+      this.minute = this.minute === -60 ? 0 : 60 + (this.minute % 60);
       this.hour += hoursToSubtract;
     }
   }
