@@ -118,11 +118,11 @@ describe('Clock', () => {
   });
 
   describe('Subtract minutes', () => {
-    xtest('subtract minutes', () => {
+    test('subtract minutes', () => {
       expect(new Clock(10, 3).minus(3).toString()).toEqual('10:00');
     });
 
-    xtest('subtract to previous hour', () => {
+    test('subtract to previous hour', () => {
       expect(new Clock(10, 3).minus(30).toString()).toEqual('09:33');
     });
 

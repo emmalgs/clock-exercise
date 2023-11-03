@@ -44,8 +44,9 @@ export class Clock {
     return this;
   }
 
-  minus() {
-    throw new Error("Remove this statement and implement this function");
+  minus(minutes) {
+    this.minute -= minutes;
+    return this;
   }
 
   equals() {
