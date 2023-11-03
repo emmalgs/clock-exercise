@@ -49,8 +49,12 @@ export class Clock {
     return this;
   }
 
-  equals() {
-    throw new Error("Remove this statement and implement this function");
+  equals(clock) {
+    if (this.toString() === clock.toString()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   checkNegativeHour() {

@@ -126,37 +126,37 @@ describe('Clock', () => {
       expect(new Clock(10, 3).minus(30).toString()).toEqual('09:33');
     });
 
-    xtest('subtract more than an hour', () => {
+    test('subtract more than an hour', () => {
       expect(new Clock(10, 3).minus(70).toString()).toEqual('08:53');
     });
 
-    xtest('subtract across midnight', () => {
+    test('subtract across midnight', () => {
       expect(new Clock(0, 3).minus(4).toString()).toEqual('23:59');
     });
 
-    xtest('subtract more than two hours', () => {
+    test('subtract more than two hours', () => {
       expect(new Clock(0, 0).minus(160).toString()).toEqual('21:20');
     });
 
-    xtest('subtract more than two hours with borrow', () => {
+    test('subtract more than two hours with borrow', () => {
       expect(new Clock(6, 15).minus(160).toString()).toEqual('03:35');
     });
 
-    xtest('subtract more than one day (1500 min = 25 hrs)', () => {
+    test('subtract more than one day (1500 min = 25 hrs)', () => {
       expect(new Clock(5, 32).minus(1500).toString()).toEqual('04:32');
     });
 
-    xtest('subtract more than two days', () => {
+    test('subtract more than two days', () => {
       expect(new Clock(2, 20).minus(3000).toString()).toEqual('00:20');
     });
   });
 
   describe('Compare two clocks for equality', () => {
-    xtest('clocks with same time', () => {
+    test('clocks with same time', () => {
       expect(new Clock(15, 37).equals(new Clock(15, 37))).toBe(true);
     });
 
-    xtest('clocks a minute apart', () => {
+    test('clocks a minute apart', () => {
       expect(new Clock(15, 36).equals(new Clock(15, 37))).toBe(false);
     });
 
