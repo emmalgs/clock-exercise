@@ -5,6 +5,8 @@ export class Clock {
   }
 
   toString() {
+    this.checkHour()
+
     let minuteString = '';
     if (this.minute < 10) {
       minuteString = `0${this.minute}`
@@ -46,5 +48,11 @@ export class Clock {
 
   equals() {
     throw new Error('Remove this statement and implement this function');
+  }
+
+  checkHour() {
+    if (this.hour < 0) {
+      this.hour += 24
+    }
   }
 }
