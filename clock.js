@@ -25,7 +25,7 @@ export class Clock {
     let hourString = "";
     if (this.hour < 10) {
       hourString = `0${this.hour}`;
-    } else if (this.hour > 10 && this.hour < 24) {
+    } else if (this.hour >= 10 && this.hour < 24) {
       hourString = `${this.hour}`;
     } else if (this.hour >= 24) {
       const rollOver = this.hour % 24;
@@ -39,8 +39,9 @@ export class Clock {
     return `${hourString}:${minuteString}`;
   }
 
-  plus() {
-    throw new Error("Remove this statement and implement this function");
+  plus(minutes) {
+    this.minute += minutes;
+    return this;
   }
 
   minus() {

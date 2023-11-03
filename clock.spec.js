@@ -84,7 +84,7 @@ describe('Clock', () => {
   });
 
   describe('Adding minutes', () => {
-    xtest('add minutes', () => {
+    test('add minutes', () => {
       expect(new Clock(10, 0).plus(3).toString()).toEqual('10:03');
     });
 
